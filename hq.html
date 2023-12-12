@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <title>HelpAR HQ</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/us.css" />
+        <link rel="manifest" href="/manifest.json">
+
+    </head>
+    <body>
+        <script src="./sw.js"></script>
+        <script src="./js/index.js"></script>
+        <div class="container" >
+            <img class="logo" onClick="window.location.href = 'hq.html'" src="./images/logo1.png" alt="" srcset="" />
+            <img
+                class="bm-arrow d-none"
+                onclick="popin()"
+                src="./images/up.png"
+                alt=""
+            />
+            <div class="popup">
+                <!-- <img
+                    class="arrow"
+                    onclick="popout()"
+                    src="./images/shou.png"
+                    alt=""
+                    srcset=""
+                /> -->
+                <div class="blank"></div>
+                <h2 id="pageTitle" class="text-center fw-bold title">
+                    Welcome to HQ!
+                </h2>
+
+                <div class="main list">
+                    <img class="moreImg" type="button" src="./images/help1.png" onclick="window.location.href = 'setup.html'" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick="window.open('https://soomshower.com/collections/vitamin-essence-collection');" src="./images/help2.png" alt="" srcset="">
+                    <img class="moreImg" type="button" onclick="window.open('https://soomshower.com/pages/faq');" src="./images/help3.png" alt="" srcset="">
+                    <img class="moreImg" type="button" src="./images/help4.png" onclick="window.open('https://soomshower.com/pages/our-story');" alt="" srcset="">
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+
+                </div>
+
+                <div class="install list d-none">
+                    <p class="tip">
+                        What type of showerhead do you have?
+                    </p>
+
+                    <button
+                        id="work"
+                        class="btn btn-black"
+                        onclick="toWall()"
+                        type="button"
+                    >
+                    Wallmounted Showerhead
+                    </button>
+                    <button
+                        id="download"
+                        class="btn btn-black"
+                        onclick="toHandheld()"
+                        type="button"
+                    >
+                    Handheld Showerhead
+                    </button>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                    <button
+                        class="btn btn-black-outline"
+                        onclick="installToMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <div class="blank"></div>
+                </div> 
+
+             
+
+                <!-- <div class="more list d-none">
+                    <img
+                        class="moreImg"
+                        type="button"
+                        src="./images/help1.png"
+                        onclick="toSupport()"
+                        alt=""
+                        srcset=""
+                    />
+                    <img
+                        class="moreImg"
+                        type="button"
+                        src="./images/help2.png"
+                        alt=""
+                        srcset=""
+                    />
+                    <img
+                        class="moreImg"
+                        type="button"
+                        src="./images/help3.png"
+                        alt=""
+                        srcset=""
+                    />
+                    <div class="blank"></div>
+
+                    <button
+                        class="btn btn-black"
+                        onclick="moreToMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                </div> -->
+<!-- 
+                <div class="support list d-none">
+                    <div class="blank"></div>
+
+                    <div class="input-container">
+                        <input
+                            class="form-line help"
+                            type="text"
+                            placeholder="How can we help?"
+                        />
+
+                        <img
+                            class="speak"
+                            src="./images/speak.png"
+                            alt="Icon"
+                        />
+                    </div>
+
+                    <div class="small-blank"></div>
+
+                    <button class="btn btn-black-outline" type="button">
+                        What does the filter remove?
+                    </button>
+                    <button class="btn btn-black-outline" type="button">
+                        What do the essence pods do?
+                    </button>
+                    <button class="btn btn-black-outline" type="button">
+                        How often do I replace the filter?
+                    </button>
+                    <div class="blank"></div>
+
+                    <button
+                        class="btn btn-black"
+                        onclick="FAQtoMain()"
+                        type="button"
+                    >
+                        Back
+                    </button>
+
+                    <div class="blank"></div>
+                    <div class="blank"></div>
+                </div> -->
+
+                
+            </div>
+        </div>
+        <script src="./js/jq.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./sw.js"></script>
+        <script src="./js/index.js"></script>
+        <script>
+
+           
+
+            $(document).ready(function() {
+                if (window.location.href.endsWith('guide-adapter.html')) {
+                    toVideoList();
+                    document.getElementById('adapter').addClass('darker-button');
+                    $('#adapter').addClass('darker-button');
+                }
+            });
+
+            function popin(){
+                $('.popup').toggleClass('hide');
+                $('.popup').addClass('up');
+                $('.bm-arrow').addClass('d-none');
+            }
+
+            function popout(){
+                $('.popup').removeClass('up');
+                $('.popup').addClass('hide');
+                $('.bm-arrow').removeClass('d-none');
+            }
+
+            
+
+            // function toMore(){
+            //     $('.more').toggleClass('d-none');
+            //     $('.main').toggleClass('d-none');
+            //     $('#pageTitle').text('Support HQ');
+            // }
+
+            // function toFAQ(){
+            //     $('.support').toggleClass('d-none');
+            //     $('.main').toggleClass('d-none');
+            //     $('#pageTitle').text('FAQ');
+            // }
+
+            // function FAQtoMain(){
+            //     $('.support').toggleClass('d-none');
+            //     $('.main').toggleClass('d-none');
+            //     $('#pageTitle').text('Welcome to HQ!');
+            // }
+
+
+            // function supportToMore(){
+            //     $('.support').toggleClass('d-none');
+            //     $('.more').toggleClass('d-none');
+            //     $('#pageTitle').text('Support HQ');
+            // }
+            // function toMain(){
+            //     $('.main').toggleClass('d-none');
+            //     $('.login').toggleClass('d-none');
+            //     addCheck('#res');
+            //     $('#pageTitle').text('Welcome to HQ!');
+            // }
+
+            // function toInstall(){
+            //     $('.main').toggleClass('d-none');
+            //     $('.install').toggleClass('d-none');
+            //     $('#pageTitle').text('INSTALL YOUR SOOM');
+            // }
+
+            // function installToMain(){
+            //     $('.install').toggleClass('d-none');
+            //     $('.main').toggleClass('d-none');
+            //     $('#pageTitle').text('Welcome to HQ!');
+            // }
+
+        
+
+            function toHandheld(){
+                window.location.href = "hq-hand.html"
+            }
+
+          
+
+            // function moreToMain(){
+            //     $('.main').toggleClass('d-none');
+            //     $('.more').toggleClass('d-none');
+            //     addCheck('#more');
+            //     $('#pageTitle').text('Welcome to HQ!');
+
+            // }
+
+            
+        </script>
+    </body>
+</html>
