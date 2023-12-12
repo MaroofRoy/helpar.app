@@ -1,15 +1,17 @@
 @font-face {
     font-family: 'regular';
     src: url(../font/Montserrat-Regular.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'bold';
     src: url(../font/Montserrat-SemiBold.ttf);
+    font-display: swap;
 }
 
 body{
-    background-image: url("../images/home.png");    
+    background: url("../images/home.webp");    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

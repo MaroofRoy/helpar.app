@@ -3,16 +3,22 @@ self.addEventListener('install', function(e) {
       caches.open('helpar-soom').then(function(cache) {
         return cache.addAll([
           '/',
+         
           './js/jq.min.js',
           './js/bootstrap.bundle.min.js.map',
           './js/bootstrap.bundle.min.js',
+          
           
           './css/work.css',
           './css/us.css',
           './css/swiper.css',
           './css/index.css',
           './css/bootstrap.min.css.map',
-          './css/bootstrap.min.css'
+          './css/bootstrap.min.css',
+
+          
+        
+
         ]);
       })
     );

@@ -18,6 +18,11 @@
         {
             "src": "./images/logo1.png",
             "sizes": "192x192"
+        },
+        {
+            "src": "./images/logo1.png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
         }
     ]
 }

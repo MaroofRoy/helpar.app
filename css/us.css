@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'main';
     src: url(../font/Montserrat-SemiBold.ttf);
+    font-display: swap;
 }
 
 *{
